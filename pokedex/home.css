@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+} /* define a margem como nula */
+
+.fundo{
+    background-color: rgb(54, 54, 54);
+    height: 100vh; /* pega a altura do monitor do usuario?? */
+    width: 100%; /* pega toda a tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadrado_1{
+    background-color: rgb(201, 198, 198);
+    border-radius: 20px;
+    width: 1600px; /* largura */
+    height: 750px; /* altura */
+    display: flex; /* coloca os elementos lado a lado */
+    flex-direction: column; /* coloca um em baixo do outro */
+    align-items: center; /* start = padrão/ end = final/ center = centro*/
+    justify-items: center; 
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-top: 100px;
+    margin-left: 0px;
+}
+
+button{
+    background-color: rgb(0, 153, 255);
+    color: white;
+    padding: 15px;
+    border-radius: 11px;
+    border: none;
+    margin-top: 100px;
+    margin-left: 0px;
+}
+h1 {
+    margin-top: 100px;
+    margin-left: 0px;
+}
+
+.img_ditto img {
+    width: 80px;  /* Ajuste este valor (ex: 50px, 100px) até ficar do tamanho que você quer */
+    height: auto; /* Garante que a imagem não fique esticada */
+}
+
+/* Mantendo sua div com as margens que você definiu */.img_ditto {
+    margin-top: -150px; /* cima e baixo */
+    margin-right: 800px; /* esquerda e direita */
+}
+
+.img_charizard img {
+    width: 150px; 
+    height: auto; 
+}
+.img_charizard {
+    margin-top: 50px;
+    margin-right: 1200px;
+}
+
+.img_gengar img {
+    width: 250px; 
+    height: auto; 
+}
+.img_gengar {
+    margin-top: -25px;
+    margin-right: -1200px;
+}
+
+.img_pokebola img {
+    width: 50px; 
+    height: auto; 
+}
+.img_pokebola {
+    margin-top: -659px;
+    margin-right: 519px;
+}
+
+.img_diglet img {
+    width: 150px; 
+    height: auto; 
+}
+.img_diglet {
+    margin-top: -100px;
+    margin-right: -800px;
+}
+
+
+/*  */
