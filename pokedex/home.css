@@ -1,9 +1,11 @@
 * {
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 } /* define a margem como nula */
 
 .fundo{
-    background-color: rgb(54, 54, 54);
+    background-color: #ff5350; /* Vermelho vibrante estilo Pokébola */
     height: 100vh; /* pega a altura do monitor do usuario?? */
     width: 100%; /* pega toda a tela */
     display: flex;
@@ -12,37 +14,124 @@
 }
 
 .quadrado_1{
-    background-color: rgb(201, 198, 198);
+    background-color: #ffffff; /* Fundo interno branco para bom contraste */
     border-radius: 20px;
-    width: 1600px; /* largura */
-    height: 750px; /* altura */
+    width: 1750px; /* largura aumentada */
+    height: 850px; /* altura aumentada */
     display: flex; /* coloca os elementos lado a lado */
     flex-direction: column; /* coloca um em baixo do outro */
     align-items: center; /* start = padrão/ end = final/ center = centro*/
     justify-items: center; 
+    position: relative;
 }
 
-input {
-    width: 250px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid gray;
-    margin-top: 100px;
-    margin-left: 0px;
+.search-box {
+    display: flex;
+    gap: 15px;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-button{
-    background-color: rgb(0, 153, 255);
+.search-box input {
+    width: 350px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.search-box input:focus {
+    border-color: #ff5350;
+    box-shadow: 0 6px 15px rgba(255, 83, 80, 0.2);
+}
+
+.search-box button {
+    background-color: #ff5350; /* Vermelho estilo Pokédex */
     color: white;
-    padding: 15px;
-    border-radius: 11px;
+    padding: 15px 35px;
+    border-radius: 30px;
     border: none;
-    margin-top: 100px;
-    margin-left: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 83, 80, 0.3);
 }
-h1 {
+
+.search-box button:hover {
+    background-color: #e03b38;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 83, 80, 0.4);
+}
+
+.search-box button:active {
+    transform: translateY(0);
+}
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-top: 100px;
-    margin-left: 0px;
+}
+
+.header-title h1 {
+    margin-top: 0;
+}
+
+.title-icon {
+    width: 50px;
+    height: auto;
+}
+
+h2 {
+    margin-top: 10px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#suggestionsList {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    display: none;
+    border: 1px solid #eee;
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #fceceb;
+    color: #ff5350;
+    font-weight: 600;
 }
 
 .img_ditto img {
@@ -50,9 +139,12 @@ h1 {
     height: auto; /* Garante que a imagem não fique esticada */
 }
 
-/* Mantendo sua div com as margens que você definiu */.img_ditto {
-    margin-top: -150px; /* cima e baixo */
-    margin-right: 800px; /* esquerda e direita */
+/* Alterando o posicionamento para Absolute para fixar perfeitamente */
+.img_ditto {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    z-index: 5;
 }
 
 .img_charizard img {
@@ -60,8 +152,10 @@ h1 {
     height: auto; 
 }
 .img_charizard {
-    margin-top: 50px;
-    margin-right: 1200px;
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    z-index: 5;
 }
 
 .img_gengar img {
@@ -69,27 +163,124 @@ h1 {
     height: auto; 
 }
 .img_gengar {
-    margin-top: -25px;
-    margin-right: -1200px;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    z-index: 5;
 }
 
-.img_pokebola img {
-    width: 50px; 
-    height: auto; 
-}
-.img_pokebola {
-    margin-top: -659px;
-    margin-right: 519px;
-}
+
 
 .img_diglet img {
     width: 150px; 
     height: auto; 
 }
 .img_diglet {
-    margin-top: -100px;
-    margin-right: -800px;
+    position: absolute;
+    bottom: 430px; /* Movido um pouco mais para baixo */
+    right: 230px; /* Movido para a direita */
+    z-index: 5;
 }
 
 
 /*  */
+
+.hidden {
+    display: none !important;
+}
+
+.card {
+    position: absolute;
+    top: 380px; /* Dá um respiro e desgruda da barra de pesquisa */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza perfeitamente no meio da tela */
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pokedex-id {
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#pokemonName {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.image-container img {
+    width: 180px;
+    height: 180px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.types-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.type-badge {
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* Tabela de Cores dos Tipos */
+.grass { background-color: #78C850; }
+.fire { background-color: #F08030; }
+.water { background-color: #6890F0; }
+.bug { background-color: #A8B820; }
+.normal { background-color: #A8A878; }
+.poison { background-color: #A040A0; }
+.electric { background-color: #F8D030; }
+.ground { background-color: #E0C068; }
+.fairy { background-color: #EE99AC; }
+.fighting { background-color: #C03028; }
+.psychic { background-color: #F85888; }
+.rock { background-color: #B8A038; }
+.ghost { background-color: #705898; }
+.ice { background-color: #98D8D8; }
+.dragon { background-color: #7038F8; }
+.dark { background-color: #705848; }
+.steel { background-color: #B8B8D0; }
+.flying { background-color: #A890F0; }
+
+/* Animação do Card */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.pop-animation {
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}

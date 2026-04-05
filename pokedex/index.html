@@ -4,7 +4,11 @@
     <meta charset="UTF-8"> <!-- permite usar simboloes e caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pikadex</title> <!-- nome que fica na aba -->
+    <link rel="icon" type="image/png" href="pokebola.png"> <!-- icone do site -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css"> <!-- conecta o css no html -->
 
 </head> <!-- fecha as configurações -->
@@ -13,11 +17,17 @@
     
     <div class=" fundo">
         <div class="quadrado_1">
-            <h1>Bem vindo(@) a sua nova pokedex</h1>
-            <h2>Pesquise sobre seu pokemon favorito</h2>
+        <div class="header-title">
+            <img src="pokebola.png" alt="Pokébola" class="title-icon">
+            <h1>Bem vindo a sua nova Pokédex</h1>
+        </div>
+        <h2>Pesquise pokémon favorito</h2>
 
                 <div class="search-box">
-                    <input type="text" id="pokemonInput" placeholder="Digite nome ou ID">
+                    <div class="input-container">
+                        <input type="text" id="pokemonInput" placeholder="Digite nome" autocomplete="off">
+                        <div id="suggestionsList"></div>
+                    </div>
                     <button id="searchBtn">Buscar</button>
                 </div>
 
@@ -47,9 +57,7 @@
                     <img src="gengar.png">
                 </div>
                 
-                <div class="img_pokebola">
-                    <img src="pokebola.png">
-                </div>
+
 
                 <div class="img_diglet">
                     <img src="taylormon.png">
@@ -63,6 +71,7 @@
 
 
 
+    <script src="api.js"></script>
 </body>  <!-- fecha a parte viusal -->
 
 
